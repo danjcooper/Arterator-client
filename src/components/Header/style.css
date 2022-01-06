@@ -1,0 +1,10 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #222236;
+    /* font-family: ; */
+}
+
+span {
+    color: #C74646
+}
