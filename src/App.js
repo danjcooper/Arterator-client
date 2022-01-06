@@ -1,5 +1,12 @@
 import React from 'react'
+import { Header } from './components'
 
-const App = () => <h1>Hello artists!</h1>
+const App = () => {
 
+    return (
+        <>
+        <Header />
+        </>
+    )
+}
 export default App
