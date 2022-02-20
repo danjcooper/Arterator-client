@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { Header } from './components';
+import { Header, PromptForm } from './components';
 
-let myName: string;
+// let myName: string;
 
 const App = () => {
   return (
     <>
       <Header />
+      <PromptForm/>
     </>
   );
 };
