@@ -7,7 +7,6 @@ const Header = () => {
       <h1>
         art<span>prompt</span>
       </h1>
-      <p>Hello I am Daniel</p>
     </>
   );
 };
