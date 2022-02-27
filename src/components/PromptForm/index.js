@@ -17,15 +17,18 @@ const PromptForm = () => {
   }, []);
 
   return (
-    <div>
-      {categoryData ? (
-        <form>
-          {categoryData.map(i => <CategorySelect category={i}/>)}
-        </form>
-      ) : (
-        <h1>Loading...</h1>
-      )}
-    </div>
+    <>
+      <div>
+        {categoryData ? (
+          <form>
+            {categoryData.map(i => <CategorySelect category={i}/>)}
+          </form>
+        ) : (
+          <h1>Loading...</h1>
+        )}
+        <button> get prompt </button>
+      </div>
+    </>  
   );
 };
 

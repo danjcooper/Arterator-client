@@ -1,0 +1,12 @@
+div button {
+  height: 30px;
+  width: 100px;
+  margin: 0 auto;
+  display: block;
+  border-style: none;
+  border-radius: 15px;
+  background: #222236;
+  font-family: "Open sans" sans-serif;
+  color: #fff;
+
+}
