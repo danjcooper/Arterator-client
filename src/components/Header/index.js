@@ -3,11 +3,11 @@ import './style.css';
 
 const Header = () => {
   return (
-    <>
+    <header>
       <h1>
         art<span>prompt</span>
       </h1>
-    </>
+    </header>
   );
 };
 
