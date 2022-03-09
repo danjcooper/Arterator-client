@@ -1,6 +1,14 @@
 import React from 'react';
-import './style.css'
+import './style.css';
 
-const Header = () => <h1>art<span>prompt</span></h1>;
+const Header = () => {
+  return (
+    <header>
+      <h1>
+        art<span>prompt</span>
+      </h1>
+    </header>
+  );
+};
 
 export default Header;

@@ -34,12 +34,17 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         resolve: {
-          extensions: [".js", ".jsx"]
+          extensions: ['.js', '.jsx'],
         },
         exclude: /nodeModules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
       },
       {
         test: /\.css$/,
