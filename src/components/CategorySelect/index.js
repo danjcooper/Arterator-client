@@ -5,7 +5,7 @@ const CategorySelect = ({category}) => {
 
     return (
         <>
-            <h1>{category.categoryname}</h1>
+            <label>{category.categoryname}</label>
             <select>
                 {category.tags.map(tag => <option>{tag}</option> )}
             </select>
