@@ -3,8 +3,9 @@ import './style.css'
 
 const PromptResult = () => {
 
-    result (
-        
+    return (
+        <>
+        </>
     )
 
 }
