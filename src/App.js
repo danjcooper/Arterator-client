@@ -1,14 +1,18 @@
 import * as React from 'react';
-import { Header, PromptForm } from './components';
+import { PromptForm } from './components';
+import { Routes, Route } from 'react-router-dom';
 
 // let myName: string;
 
 const App = () => {
   return (
     <>
-      <Header />
-      <PromptForm/>
+      <Routes>
+        <Route path='/test' element={<PromptForm/>} />
+          {/* <PromptForm/> */}
+      </ Routes>
     </>
   );
 };
+
 export default App;

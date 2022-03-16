@@ -6,9 +6,9 @@ const CategorySelect = ({category}) => {
     return (
         <>
             <label>{category.categoryname}</label>
-            <select>
-                {category.tags.map(tag => <option>{tag}</option> )}
-            </select>
+            <select id={category.categoryname}>
+                {category.tags.map((tag, index) => <option key={index}>{tag}</option> )}
+            </select> 
         </>
     )
 }
