@@ -8,8 +8,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/test' element={<PromptForm/>} />
-          {/* <PromptForm/> */}
+        <Route path='/' element={<PromptForm/>} />
       </ Routes>
     </>
   );
