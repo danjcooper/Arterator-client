@@ -5,7 +5,7 @@ const ROOT_DIRECTORY = path.join(__dirname, '../'); // the root of your project
 const PUBLIC_DIRECTORY = path.join(ROOT_DIRECTORY, 'public'); // the root of the frontend, i.e. html file
 
 const config = {
-  entry: [path.resolve(ROOT_DIRECTORY, 'src/index.tsx')], // the main JavaScript file of the project
+  entry: [path.resolve(ROOT_DIRECTORY, 'src/index.js')], // the main JavaScript file of the project
   output: {
     // instructions for compiling the code
     path: path.resolve(ROOT_DIRECTORY, 'build'), // the file where the compiled code should go
@@ -32,13 +32,14 @@ const config = {
     // helpers we want webpack to use
     rules: [
       {
+        test: /\.(js|jsx)$/,
         resolve: {
-          extensions: ['.js', '.json', '.ts', '.tsx'],
+          extensions: ['.js', '.jsx'],
         },
-
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /nodeModules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
         enforce: 'pre',

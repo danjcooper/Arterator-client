@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+label {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+}
+
+select {
+    height: 30px;
+    margin-bottom: 15px;
+    min-width: 50%;
+    background-color: #E6E5E5;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 3px;
+    border-bottom-color: #C74646;
+    outline: none;
+}
