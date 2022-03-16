@@ -8,7 +8,7 @@ const CategorySelect = ({category}) => {
             <label>{category.categoryname}</label>
             <select>
                 {category.tags.map(tag => <option>{tag}</option> )}
-            </select>
+            </select> 
         </>
     )
 }
