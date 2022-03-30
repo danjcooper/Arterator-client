@@ -5,9 +5,10 @@ const PromptResult = () => {
 
     return (
         <>
+            <p>hey just checking</p>
         </>
-    )
+    );
 
-}
+};
 
 export default PromptResult;
