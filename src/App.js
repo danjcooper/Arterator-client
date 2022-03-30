@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { PromptForm } from './components';
+import { Header, PromptForm, PromptResult } from './components';
 import { Routes, Route } from 'react-router-dom';
 
-// let myName: string;
 
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path='/' element={<PromptForm/>} />
-      </ Routes>
+        <Header />
+          <Routes>
+            <Route path='/' element={<PromptForm/>} />
+            <Route path='/promptresult' element={<PromptResult />} /> {/* index? */}
+          </ Routes>
     </>
   );
 };
