@@ -20,9 +20,6 @@ const PromptForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.medium.value);
-    // console.log(e.target)
-    // make form data object
-    // save form data object
     const newformData = {
       style: null,
       medium: null,
