@@ -1,12 +1,14 @@
 import React from 'react'
 import './style.css'
 
-const PromptResult = () => {
+const PromptResult = ({data}) => {
 
+   
     return (
-        <>
-            <p>hey just checking</p>
-        </>
+        <div>
+            <p>{data} </p>
+            
+        </div>
     );
 
 };
