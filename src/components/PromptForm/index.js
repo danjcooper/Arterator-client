@@ -13,6 +13,7 @@ const PromptForm = () => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({});
 
+
   useEffect(() => {
     const getData = async () => {
       const data = await axios.get(serverURL);
@@ -33,12 +34,11 @@ const PromptForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormData(formData);
-    // <PromptResult data={newformData}/>
-    navigate('/promptresult')
-
+    // setFormData(formData);
+    navigate('/promptresult', formData)
+    
   };
-
+  
   const onChange = (e) => {
     console.log(e.target.id)
     setFormData({...formData, [e.target.id]: e.target.value})
