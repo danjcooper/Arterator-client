@@ -13,7 +13,6 @@ const PromptForm = () => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({});
 
-
   useEffect(() => {
     const getData = async () => {
       const data = await axios.get(serverURL);
@@ -35,8 +34,11 @@ const PromptForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // setFormData(formData);
-    navigate('/promptresult', formData)
-    
+    navigate('/promptresult', {
+      state: {
+        formData
+      }
+    });
   };
   
   const onChange = (e) => {
