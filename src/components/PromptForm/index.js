@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./style.css";
 import axios from "axios";
 import { CategorySelect } from "..";
+import PromptResult from "../PromptResult";
+
 const serverURL =
   "https://arterator.herokuapp.com/categories/categorieswithtags";
 
 const PromptForm = () => {
   const [categoryData, setCategoryData] = useState([]);
-  const [formData, setFormData] = useState(null);
+  const navigate = useNavigate()
+  const [formData, setFormData] = useState({});
 
   useEffect(() => {
     const getData = async () => {
@@ -16,30 +20,39 @@ const PromptForm = () => {
     };
     getData();
   }, []);
+  
+  useEffect(() => {
+    let output = {};
+    categoryData.forEach(i => {
+      output[i.categoryname]= i.tags[0]
+      console.log(output)
+    })
+    setFormData(output)
+  }, [categoryData]);
 
-  const onSubmit = (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.medium.value);
-    // console.log(e.target)
-    // make form data object
-    // save form data object
-    const newformData = {
-      style: null,
-      medium: null,
-      mood: null,
-      subject: null,
-      colorpalette: null,
-    };
-    setFormData(newformData);
+    // setFormData(formData);
+    navigate('/promptresult', {
+      state: {
+        formData
+      }
+    });
   };
+  
+  const onChange = (e) => {
+    console.log(e.target.id)
+    setFormData({...formData, [e.target.id]: e.target.value})
+  }
 
   return (
     <>
       <div>
         {categoryData ? (
-          <form onSubmit={onSubmit}>
+          <form onSubmit={handleSubmit}>
             {categoryData.map((i) => (
-              <CategorySelect key={i.categoryid} category={i}/>
+              <CategorySelect key={i.categoryid} category={i} onChange={onChange}/>
             ))}
             <button> get prompt </button>
           </form>
