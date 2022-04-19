@@ -4,8 +4,8 @@ Please note that though the site is live, it's still in development while we add
 
 ## Installation & Usage
 You can view the site locally by doing the following.  
--Clone down this repo  
--In your terminal `cd Arterator-client`  
--In your terminal `npm install`  
--`npm run dev` to start  
--The site will now be running locally on port 8080  
+- Clone down this repo  
+- In your terminal `cd Arterator-client`  
+- In your terminal `npm install`  
+- `npm run dev` to start  
+- The site will now be running locally on port 8080  
