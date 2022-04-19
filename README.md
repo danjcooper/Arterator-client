@@ -1,5 +1,5 @@
 # Arterator-client
-This is the client side of our art prompt generator. The live site can be found [here](https://arterator.netlify.app/)
+This is the client side of our art prompt generator. The live site can be found [here](https://arterator.netlify.app/)  
 Please note that though the site is live, it's still in development while we add more features. 
 
 ## Installation & Usage
