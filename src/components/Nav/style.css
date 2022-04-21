@@ -12,3 +12,7 @@ a {
  font-family:'Open sans', sans-serif;
 }
 
+a:visited {
+  color: inherit;
+}
+
