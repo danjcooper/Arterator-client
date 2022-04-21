@@ -1,0 +1,14 @@
+nav {
+  width: 100%;
+  background-color: #fff;
+  /* padding: 25px; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+a {
+ margin: 10px;
+ text-decoration: none;
+ font-family:'Open sans', sans-serif;
+}
+
