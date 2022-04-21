@@ -9,7 +9,7 @@ const Nav = () => {
   return (
     <nav>
       <NavLink className='new-prompt-link' to='/'>New Prompt</NavLink>
-      <NavLink className='random-prompt-link' to=''>Random Prompt</NavLink>
+      <NavLink className='random-prompt-link' to='/Random-prompts-link'>Random prompts</NavLink>
       <NavLink className='about-link' to='/about'>About</NavLink>
     
     </nav>
