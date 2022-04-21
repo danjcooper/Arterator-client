@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "./style.css";
 import axios from "axios";
 import { CategorySelect } from "..";
-import PromptResult from "../PromptResult";
+// import PromptResult from "../PromptResult";
 
 const serverURL =
   "https://arterator.herokuapp.com/categories/categorieswithtags";
