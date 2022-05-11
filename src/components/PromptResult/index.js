@@ -1,26 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
 import './style.css'
 
 const PromptResult = () => {
     const location = useLocation();
-    const style = location.state.formData.style;
-    const medium = location.state.formData.medium;
-    const mood = location.state.formData.mood;
-    const subject = location.state.formData.subject;
-    const colorPalette = location.state.formData['color palette'];
+    const [prompt, setPrompt] = useState(null);
+    const { style, medium, mood, subject } = location.state.formData
+    // const colorPalette = location.state.formData['color palette'];
+    // TO DO this page breaks when we navigate to it directly
     
-
+    useEffect(() => {
+        const getData = async () => {
+            const formData = location.state.formData
+            console.log(formData)
+            const data = await axios.post('https://warm-dolls-fall-151-231-37-214.loca.lt/prompt', formData);
+            setPrompt(data.data);
+          };
+        getData();
+    },[])
+    
 
     return (
         <div>
-            <p>Your piece of art should include the following:</p>
-            <p>{style}</p>            
-            <p>{medium}</p>            
-            <p>{mood}</p>            
-            <p>{subject}</p>            
-            <p>{colorPalette}</p>            
-            
+            {prompt ? <h1>{prompt.prompt}</h1> : <h1>Loading</h1>}
+        
         </div>
     );
 
