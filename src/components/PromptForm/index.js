@@ -12,6 +12,7 @@ const PromptForm = () => {
   const [categoryData, setCategoryData] = useState([]);
   const navigate = useNavigate()
   const [formData, setFormData] = useState({});
+  const [button, setButton] = useState()
 
   useEffect(() => {
     const getData = async () => {
@@ -30,6 +31,10 @@ const PromptForm = () => {
     setFormData(output)
   }, [categoryData]);
 
+  useEffect(() => {
+    console.log(formData)
+
+  }, [formData])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,9 +46,10 @@ const PromptForm = () => {
     });
   };
   
-  const onChange = (e) => {
+  const updateSelection = (e) => {
     console.log(e.target.id)
     setFormData({...formData, [e.target.id]: e.target.value})
+        
   }
 
   return (
@@ -52,9 +58,9 @@ const PromptForm = () => {
         {categoryData ? (
           <form onSubmit={handleSubmit}>
             {categoryData.map((i) => (
-              <CategorySelect key={i.categoryid} category={i} onChange={onChange}/>
+              <CategorySelect key={i.categoryid} category={i} onChange={updateSelection}/>
             ))}
-            <button> get prompt </button>
+            <button > get prompt </button>
           </form>
         ) : (
           <h1>Loading...</h1>
