@@ -4,6 +4,7 @@ nav {
   /* padding: 25px; */
   display: flex;
   justify-content: flex-end;
+  font-size: small;
 }
 
 a {
