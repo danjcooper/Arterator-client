@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { RandomImage } from "../../components";
+// import { RandomImage } from "../../components";
 import axios from "axios";
 import "./style.css";
 
@@ -12,14 +12,22 @@ const RandomPrompts = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(imagesURL);
-      // console.log(response.data);
-      // const data = await response.data;
-      setRandomImage(response.data);
+      const data = await response.data;
+      console.log(data.urls);
+      setRandomImage(data.urls.thumb);
     };
     getData();
   }, []);
 
-  return <>{<RandomImage key={randomImage.id} props={randomImage} />}</>;
+  return (
+    <>
+      {
+        <div>
+          <img src={randomImage} />
+        </div>
+      }
+    </>
+  );
 };
 
 export default RandomPrompts;
