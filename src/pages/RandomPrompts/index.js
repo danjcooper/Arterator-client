@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { RandomImage } from "../../components";
+import { RandomImage } from "../../components";
 import axios from "axios";
 import "./style.css";
 
@@ -21,11 +21,7 @@ const RandomPrompts = () => {
 
   return (
     <>
-      {
-        <div>
-          <img src={randomImage} />
-        </div>
-      }
+      <RandomImage image={randomImage} />
     </>
   );
 };
