@@ -8,13 +8,20 @@ const imagesURL =
 
 const RandomPrompts = () => {
   const [randomImage, setRandomImage] = useState([]);
+  const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get(imagesURL);
-      const data = await response.data;
-      console.log(data.urls);
-      setRandomImage(data.urls.thumb);
+      try {
+        let { data } = await axios.get(imagesURL);
+        setRandomImage(data.urls.thumb);
+      } catch (error) {
+        setErrorMessage("There was an error getting your random image");
+      }
+      // const response = await axios.get(imagesURL);
+      // const data = await response.data;
+      // console.log(data.urls);
+      // setRandomImage(data.urls.thumb);
     };
     getData();
   }, []);
