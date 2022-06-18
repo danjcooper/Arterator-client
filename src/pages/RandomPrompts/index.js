@@ -7,7 +7,7 @@ const imagesURL =
   "https://api.unsplash.com/photos/random?client_id=KlqKTIHfc9rS-ilCMxEZx_0-XF5g8PKXySEU5IiCVOM";
 
 const RandomPrompts = () => {
-  const [randomImage, setRandomImage] = useState([]);
+  const [randomImage, setRandomImage] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
@@ -26,11 +26,7 @@ const RandomPrompts = () => {
     getData();
   }, []);
 
-  return (
-    <>
-      <RandomImage image={randomImage} />
-    </>
-  );
+  return <>{randomImage && <RandomImage image={randomImage} />}</>;
 };
 
 export default RandomPrompts;

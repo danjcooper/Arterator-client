@@ -14,8 +14,8 @@ const PromptResult = () => {
     const getData = async () => {
       const formData = location.state.formData;
       console.log(formData);
-      const data = await axios.get(
-        // "https://warm-dolls-fall-151-231-37-214.loca.lt/prompt",
+      const data = await axios.post(
+        "https://arterator.herokuapp.com/prompt",
         formData
       );
       setPrompt(data.data);
