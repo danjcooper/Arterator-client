@@ -1,16 +1,19 @@
-import * as React from 'react';
-import { Header, PromptForm, PromptResult } from './components';
-import { Routes, Route } from 'react-router-dom';
-
+import * as React from "react";
+import { Header, PromptForm, PromptResult, Nav } from "./components";
+import { About, RandomPrompts } from "./pages";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <>
-        <Header />
-          <Routes>
-            <Route path='/' element={<PromptForm/>} />
-            <Route path='/promptresult' element={<PromptResult />} /> {/* index? */}
-          </ Routes>
+      <Nav />
+      <Header />
+      <Routes>
+        <Route path="/" element={<PromptForm />} />
+        <Route path="/promptresult" element={<PromptResult />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/randomprompts" element={<RandomPrompts />} />
+      </Routes>
     </>
   );
 };
