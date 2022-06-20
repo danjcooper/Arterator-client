@@ -28,7 +28,26 @@ const RandomPrompts = () => {
     getData();
   }, []);
 
-  return <>{randomImage && <RandomImage image={randomImage} />}</>;
+  useEffect(() => {
+    const getWords = async () => {
+      try {
+        const data = await axios.get(wordsURL);
+        console.log(data);
+        const randomWord = data.data;
+        setRandomWord(randomWord);
+      } catch (error) {
+        setErrorMessage("There was an error getting your random word");
+      }
+    };
+    getWords();
+  }, []);
+
+  return (
+    <>
+      {randomImage && <RandomImage image={randomImage} />}
+      {randomWord && <RandomWord word={randomWord} />}
+    </>
+  );
 };
 
 export default RandomPrompts;
